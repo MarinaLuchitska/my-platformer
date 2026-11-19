@@ -464,7 +464,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 6.9444447
+  orthographic size: 6.5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1256,8 +1256,8 @@ MonoBehaviour:
   jumpBufferTime: 0.15
   animator: {fileID: 1931726580}
   spriteRenderer: {fileID: 1931726576}
-  hardLandingSpeed: 9
-  hitStopDuration: 0.05
+  hardLandingSpeed: 22
+  hitStopDuration: 0.1
   hitStop: {fileID: 571056497}
   source: {fileID: 0}
   footsteps: []

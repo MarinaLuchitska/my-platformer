@@ -15,10 +15,12 @@ public class HitStop : MonoBehaviour
 
     private IEnumerator Routine(float duration)
     {
+        Debug.Log($"⏸ Стоп-кадр {duration:F2} с");
         Time.timeScale = 0f;
         // WaitForSecondsRealtime, бо WaitForSeconds при timeScale = 0 НЕ спливе
         yield return new WaitForSecondsRealtime(duration);
         Time.timeScale = 1f;
         current = null;
+        Debug.Log("▶ Час відновлено");
     }
 }

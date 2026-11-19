@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private SpriteRenderer spriteRenderer;
 
     [Header("Зворотний звʼязок")]
-    [SerializeField, Range(1f, 20f)] private float hardLandingSpeed = 9f;
+    [SerializeField, Range(1f, 40f)] private float hardLandingSpeed = 22f;
     [SerializeField, Range(0.01f, 0.1f)] private float hitStopDuration = 0.05f;
     [SerializeField] private HitStop hitStop;
 
@@ -147,9 +147,13 @@ public class PlayerController : MonoBehaviour
 
     private void OnLanded(float speed)
     {
+        // Журнал для підбору порогу: видно реальну швидкість кожного приземлення
+        Debug.Log($"Приземлення: {speed:F1} (поріг {hardLandingSpeed:F1})");
+
         // ТІЛЬКИ жорстке приземлення. Легкий зскок зі сходинки ефекту не дає
         if (speed < hardLandingSpeed) return;
         if (hitStop != null) hitStop.Stop(hitStopDuration);
+        else Debug.LogWarning("HitStop не знайдено у сцені");
     }
 
     private void UpdateVisuals()
